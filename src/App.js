@@ -1,24 +1,38 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import SignUpForm from './components/SignUpForm';
+import LoginForm from './components/LoginForm';
+import Home from './Pages/Home';
+import {BrowserRouter as Router,Routes,Route,Navigate} from 'react-router-dom'
+
 
 function App() {
+  const [showSignup,setShowSignup] = useState(false);
+  const [loggedIn,setLoggedIn] = useState(false);
+  const [userName,setUserName] = useState("");
+  const handleSignUp = (formdata) => {
+    setUserName(formdata.get("username"));
+    setShowSignup(false);
+  }
+  const handleLogIn = (logInData) => {
+    setUserName(logInData.get("email"));
+    console.log("hey");
+  }
+  const displaySignUp = () => {
+    setShowSignup(true);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+      <Router>  
+        <Routes>
+          
+          <Route path="/home" element={<Home></Home>}>
+
+          </Route>
+      </Routes>    
+      </Router>  
+      
   );
 }
 

@@ -1,21 +1,13 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  background-color: #282c34;
+  height: auto;
+  background-image: url("https://mrwallpaper.com/images/hd/scrooge-mcduck-bed-of-treasure-9vrlsojzvdqx79xh.jpg");
+  background-size: cover;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+ 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,15 +16,50 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.App-body{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(3,1fr);
+  height: 100vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.login{
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login > input
+{
+  margin: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  color: hsl(0, 18%, 97%);
+  width: 200px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  background-color: transparent;
+  font-size: large;
+}
+
+.login-buttons > button {
+  width: 100px;
+  background-color: transparent;
+  color: hsl(0, 18%, 97%);
+  font-size: larger;
+  margin: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+}
+
+.message-section{
+  background-color: transparent;
+  color: hsl(0, 18%, 97%);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: larger;
 }
